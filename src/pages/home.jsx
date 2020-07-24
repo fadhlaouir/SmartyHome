@@ -1,24 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import "antd-mobile/dist/antd-mobile.css";
-import { Button } from "antd-mobile";
-import { StyleSheet, Text, View } from "react-native";
+import moment from "moment";
+import { Card } from "antd-mobile";
+import { Text, View } from "react-native";
+import Smarty from "./data";
+import "./home.scss";
 
 export default function Home() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Button type="primary">primary</Button>
-      <StatusBar style="auto" />
+    <View className="smarty">
+      <Text>
+        {moment().format("MMMM DD, YYYY")} <br />
+        Welcome, XXX
+      </Text>
+
+      <Card className="smarty__cards">
+        <Card.Body className="smarty__cards__body">
+          <div>This is content of `Card`</div>
+        </Card.Body>
+        <Card.Footer
+          className="smarty__cards__footer"
+          content={<p>footer content</p>}
+        />
+      </Card>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

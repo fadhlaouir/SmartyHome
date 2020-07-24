@@ -1,0 +1,13 @@
+.smarty {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  &__cards {
+    border-radius: 15px;
+    border: none;
+    &__body {
+    }
+    &__footer {
+    }
+  }
+}
