@@ -1,4 +1,4 @@
-package com.awesomeproject;
+package com.smartyhome;
 
 import android.os.Bundle;
 

@@ -1,9 +1,9 @@
 {
-  "name": "AwesomeProject",
-  "displayName": "AwesomeProject",
+  "name": "smartyHome",
+  "displayName": "smartyHome",
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "name": "smartyHome",
+    "slug": "smartyHome",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

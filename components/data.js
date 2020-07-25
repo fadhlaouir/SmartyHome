@@ -1,4 +1,4 @@
-const Smarty = [
+export const Smarty = [
   {
     image: "../../assets/images/livingroom.png",
     tittle: "Living Room",
