@@ -5,6 +5,19 @@ import { Button } from "react-native-elements";
 
 export default function Main({ navigation }) {
   const [name, setName] = React.useState("");
+  const [nameError, setNameError] = React.useState("");
+  const nameValidator = () => {
+    nameError == ""
+      ? setNameError("Please enter your name!")
+      : setNameError("");
+  };
+  const onsubmit = () => {
+    let rjx = /^[a-zA-z]+$/;
+    let isValid = rjx.test(name);
+    isValid
+      ? navigation.navigate("Home", { name: name })
+      : setNameError("Please enter your name!");
+  };
   return (
     <View style={styles.main}>
       <Image
@@ -15,12 +28,14 @@ export default function Main({ navigation }) {
       <Text style={styles.text}>Welcome Home</Text>
       <TextInput
         style={styles.input}
+        onBlur={() => nameValidator()}
         onChangeText={(text) => setName(text)}
         placeholder="Your Name"
       />
+      <Text style={{ color: "red", marginBottom: "10px" }}>{nameError}</Text>
       <Button
         buttonStyle={styles.button}
-        onPress={() => navigation.navigate("Home", { name: name })}
+        onPress={() => onsubmit()}
         title="CONTINUE"
       />
     </View>
@@ -45,7 +60,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     margin: "10px",
   },
-
   button: {
     borderRadius: "7px",
     color: "#F8FAF9",

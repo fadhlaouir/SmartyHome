@@ -15,7 +15,7 @@ export default function Home({ route }) {
       {Smarty.map((s) => (
         <CardImage
           key={s.toString()}
-          style={styles.card}
+          style={styles.CardImage}
           source={s.image}
           title={
             <Text style={[styles.title, styles.devices]}>
@@ -41,9 +41,14 @@ const styles = StyleSheet.create({
     color: "#0D1215",
     fontSize: "26px",
     fontWeight: "600",
+    paddingBottom: "10px",
   },
 
-  card: { margin: "10px", marginTop: "10px" },
-  title: { fontSize: "16px", fontWeight: "600" },
-  devices: { fontSize: "12px" },
+  CardImage: {
+    // margin: "10px",
+    borderRadius: "20px",
+    // height: "200px",
+  },
+  // title: { fontSize: "16px", fontWeight: "600" },
+  // devices: { fontSize: "12px" },
 });
