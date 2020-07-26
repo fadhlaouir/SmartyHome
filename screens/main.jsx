@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Image } from "react-native";
 import { Button } from "react-native-elements";
-import { COLORS } from "./colors";
+import { COLORS } from "../shared/colors";
 
 export default function Main({ navigation }) {
   const [name, setName] = useState("");
@@ -33,7 +33,7 @@ export default function Main({ navigation }) {
       />
       <Text style={styles.textError}>{nameError}</Text>
       <Button
-        buttonStyle={styles.button}
+        style={styles.button}
         onPress={() => onsubmit()}
         title="CONTINUE"
       />
