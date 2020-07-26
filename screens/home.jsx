@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     fontSize: "20px",
     fontWeight: 600,
   },
-  card: { borderRadius: "20px" },
+  card: { margin: "10px", marginTop: "10px" },
   cardTitle: {},
   devices: {},
 });
