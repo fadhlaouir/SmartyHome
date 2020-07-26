@@ -1,22 +1,22 @@
 export const Smarty = [
   {
-    image: "../../assets/images/livingroom.png",
-    tittle: "Living Room",
+    image: require("../assets/images/livingroom.png"),
+    title: "Living Room",
     devices: "4 Devices",
   },
   {
-    image: "../../assets/images/mediaroom.png",
-    tittle: "Media Room",
+    image: require("../assets/images/mediaroom.png"),
+    title: "Media Room",
     devices: "6 Devices",
   },
   {
-    image: "../../assets/images/bathroom.png",
-    tittle: "Bathroom",
+    image: require("../assets/images/bathroom.png"),
+    title: "Bathroom",
     devices: "1 Devices",
   },
   {
-    image: "../../assets/images/bedroom.png",
-    tittle: "Bedroom",
+    image: require("../assets/images/bedroom.png"),
+    title: "Bedroom",
     devices: "3 Devices",
   },
 ];

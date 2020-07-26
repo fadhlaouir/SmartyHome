@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { StyleSheet, Text, View } from "react-native";
+import { CardImage } from "react-native-cards";
 import { Smarty } from "./data";
 
 export default function Home({ route }) {
@@ -12,13 +13,17 @@ export default function Home({ route }) {
       </Text>
       <Text style={styles.text}>Welcome, {name}!</Text>
       {Smarty.map((s) => (
-        <>
-          <div>
-            {s.title}
-            <br />
-            {s.devices}
-          </div>
-        </>
+        <CardImage
+          style={styles.card}
+          source={s.image}
+          title={
+            <>
+              <span>{s.title}</span>
+              <br />
+              <span>{s.devices}</span>
+            </>
+          }
+        />
       ))}
     </View>
   );
@@ -38,4 +43,7 @@ const styles = StyleSheet.create({
     fontSize: "20px",
     fontWeight: 600,
   },
+  card: { borderRadius: "20px" },
+  cardTitle: {},
+  devices: {},
 });
