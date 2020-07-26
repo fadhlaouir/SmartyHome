@@ -1,6 +1,7 @@
 import "react-native-gesture-handler";
 import React from "react";
-import { StyleSheet, Text, TextInput, View, Button, Image } from "react-native";
+import { StyleSheet, Text, TextInput, View, Image } from "react-native";
+import { Button } from "react-native-elements";
 
 export default function Main({ navigation }) {
   const [name, setName] = React.useState("");
@@ -17,13 +18,11 @@ export default function Main({ navigation }) {
         onChangeText={(text) => setName(text)}
         placeholder="Your Name"
       />
-      <View style={styles.btn}>
-        <Button
-          style={styles.button}
-          onPress={() => navigation.navigate("Home", { name: name })}
-          title="CONTINUE"
-        />
-      </View>
+      <Button
+        buttonStyle={styles.button}
+        onPress={() => navigation.navigate("Home", { name: name })}
+        title="CONTINUE"
+      />
     </View>
   );
 }
@@ -46,11 +45,10 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     margin: "10px",
   },
-  btn: {
+
+  button: {
+    borderRadius: "7px",
     color: "#F8FAF9",
     width: "160px",
-  },
-  button: {
-    borderRadius: "15px",
   },
 });
