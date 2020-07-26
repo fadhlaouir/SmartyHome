@@ -1,11 +1,12 @@
 import "react-native-gesture-handler";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Image } from "react-native";
 import { Button } from "react-native-elements";
+import { COLORS } from "./colors";
 
 export default function Main({ navigation }) {
-  const [name, setName] = React.useState("");
-  const [nameError, setNameError] = React.useState("");
+  const [name, setName] = useState("");
+  const [nameError, setNameError] = useState("");
   const nameValidator = () => {
     nameError == ""
       ? setNameError("Please enter your name!")
@@ -46,23 +47,23 @@ const styles = StyleSheet.create({
   main: { flex: 1, alignItems: "center", justifyContent: "center" },
   image: { width: 400, height: 400, resizeMode: "contain" },
   title: {
+    color: COLORS.black,
     fontSize: "35px",
     fontWeight: "600",
-    color: "#0D1215",
   },
-  text: { color: "#8E9295", fontSize: "18px", padding: "10px" },
+  text: { color: COLORS.gray, fontSize: "18px", padding: "10px" },
   input: {
+    backgroundColor: COLORS.white,
+    color: COLORS.gray,
     height: 40,
     borderWidth: 1,
-    backgroundColor: "#F8FAF9",
     textAlign: "center",
-    color: "#8E9295",
     fontWeight: "600",
     margin: "10px",
   },
   button: {
+    color: COLORS.white,
     borderRadius: "7px",
-    color: "#F8FAF9",
     width: "160px",
   },
 });
