@@ -14,14 +14,13 @@ export default function Home({ route }) {
       <Text style={styles.text}>Welcome, {name}!</Text>
       {Smarty.map((s) => (
         <CardImage
+          key={s.toString()}
           style={styles.card}
           source={s.image}
           title={
-            <>
-              <span>{s.title}</span>
-              <br />
-              <span>{s.devices}</span>
-            </>
+            <Text style={[styles.title, styles.devices]}>
+              {s.title} <br /> {s.devices}
+            </Text>
           }
         />
       ))}
@@ -36,14 +35,15 @@ const styles = StyleSheet.create({
   },
   date: {
     color: "#8E9295",
-    fontSize: "12px",
+    fontSize: "16px",
   },
   text: {
     color: "#0D1215",
-    fontSize: "20px",
-    fontWeight: 600,
+    fontSize: "26px",
+    fontWeight: "600",
   },
+
   card: { margin: "10px", marginTop: "10px" },
-  cardTitle: {},
-  devices: {},
+  title: { fontSize: "16px", fontWeight: "600" },
+  devices: { fontSize: "12px" },
 });

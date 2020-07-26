@@ -17,28 +17,28 @@ export default function Main({ navigation }) {
         onChangeText={(text) => setName(text)}
         placeholder="Your Name"
       />
-      <Button
-        style={styles.btn}
-        onPress={() => navigation.navigate("Home", { name: name })}
-        title="CONTINUE"
-      />
+      <View style={styles.btn}>
+        <Button
+          style={styles.button}
+          onPress={() => navigation.navigate("Home", { name: name })}
+          title="CONTINUE"
+        />
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   main: { flex: 1, alignItems: "center", justifyContent: "center" },
-  image: { width: 300, height: 200 },
+  image: { width: 400, height: 400, resizeMode: "contain" },
   title: {
     fontSize: "35px",
     fontWeight: "600",
     color: "#0D1215",
-    paddingTop: "10px",
   },
   text: { color: "#8E9295", fontSize: "18px", padding: "10px" },
   input: {
     height: 40,
-    borderColor: "#8E9295",
     borderWidth: 1,
     backgroundColor: "#F8FAF9",
     textAlign: "center",
@@ -47,8 +47,10 @@ const styles = StyleSheet.create({
     margin: "10px",
   },
   btn: {
-    borderRadius: "15px",
     color: "#F8FAF9",
-    width: "150px",
+    width: "160px",
+  },
+  button: {
+    borderRadius: "15px",
   },
 });
