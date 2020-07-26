@@ -8,16 +8,14 @@ export default function Main({ navigation }) {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
   const nameValidator = () => {
-    nameError == ""
-      ? setNameError("Please enter your name!")
-      : setNameError("");
+    !nameError ? setNameError("") : setNameError("Please enter your name!");
   };
   const onsubmit = () => {
     let rjx = /^[a-zA-z]+$/;
     let isValid = rjx.test(name);
-    isValid
-      ? navigation.navigate("Home", { name: name })
-      : setNameError("Please enter your name!");
+    !isValid
+      ? setNameError("Please enter your name!")
+      : navigation.navigate("Home", { name: name });
   };
   return (
     <View style={styles.main}>
@@ -33,7 +31,7 @@ export default function Main({ navigation }) {
         onChangeText={(text) => setName(text)}
         placeholder="Your Name"
       />
-      <Text style={{ color: "red", marginBottom: "10px" }}>{nameError}</Text>
+      <Text style={styles.textError}>{nameError}</Text>
       <Button
         buttonStyle={styles.button}
         onPress={() => onsubmit()}
@@ -45,25 +43,28 @@ export default function Main({ navigation }) {
 
 const styles = StyleSheet.create({
   main: { flex: 1, alignItems: "center", justifyContent: "center" },
-  image: { width: 400, height: 400, resizeMode: "contain" },
+  image: { width: 350, height: 400, resizeMode: "contain" },
   title: {
     color: COLORS.black,
-    fontSize: "35px",
+    fontSize: "48px",
     fontWeight: "600",
   },
-  text: { color: COLORS.gray, fontSize: "18px", padding: "10px" },
+  text: { color: COLORS.gray, fontSize: "24px", padding: "10px" },
+  textError: { color: COLORS.red, marginBottom: "10px", fontWeight: "400" },
   input: {
     backgroundColor: COLORS.white,
     color: COLORS.gray,
-    height: 40,
-    borderWidth: 1,
+    height: 50,
+    borderWidth: 0.5,
     textAlign: "center",
-    fontWeight: "600",
+    fontWeight: "400",
+    fontSize: "22px",
     margin: "10px",
+    width: "200px",
   },
   button: {
-    color: COLORS.white,
     borderRadius: "7px",
-    width: "160px",
+    width: "180px",
+    height: 50,
   },
 });

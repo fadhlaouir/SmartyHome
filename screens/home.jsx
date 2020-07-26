@@ -54,17 +54,17 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.white,
-    fontSize: "16px",
+    fontSize: "18px",
     fontWeight: "600",
     position: "absolute",
-    bottom: "50px",
+    bottom: "35px",
     left: "10px",
   },
   devices: {
     color: COLORS.white,
     fontSize: "14px",
     position: "absolute",
-    bottom: "30px",
+    bottom: "15px",
     left: "10px",
   },
 });
